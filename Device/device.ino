@@ -13,13 +13,13 @@
 #define TFTW2           160     // half screen width
 #define TFTH2           120     // half screen height
 // Please input the SSID and password of WiFi
-const char* ssid     = "bbbb";
-const char* password = "chenyiwen123";
+const char* ssid     = "";
+const char* password = "";
 
 /*String containing Hostname, Device Id & Device Key in the format:                         */
 /*  "HostName=<host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>"                */
 /*  "HostName=<host_name>;DeviceId=<device_id>;SharedAccessSignature=<device_sas_token>"    */
-static const char* connectionString = "HostName=t-yiwche-test2-iothub.azure-devices.net;DeviceId=t-yiwche-test2-iothub-device;SharedAccessKey=GOTVHYHG+ZguCihMB5pctZrbuejX8jAVYfeF3AtPhyo=";
+static const char* connectionString = "";
 static bool hasIoTHub = false;
 static bool hasWifi = false;
 static unsigned int current_choice = 0;
