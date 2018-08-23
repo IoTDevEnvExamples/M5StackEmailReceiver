@@ -1,0 +1,30 @@
+{
+    "componentConfigs": [
+        {
+            "id": "4710f088-dc4f-6e1b-9d09-277b610c7905",
+            "folder": "",
+            "name": "",
+            "dependencies": [],
+            "type": "IoTHub",
+            "componentInfo": {
+                "values": {
+                    "iotHubConnectionString": "HostName=t-yiwche-test2-iothub.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=vb9B+sKXguiNNx6DYZ/ot1+n/8flKSrKIjndbHk6Xws=",
+                    "eventHubConnectionString": "Endpoint=sb://iothub-ns-t-yiwche-t-684923-7fac3088f5.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=vb9B+sKXguiNNx6DYZ/ot1+n/8flKSrKIjndbHk6Xws=",
+                    "eventHubConnectionPath": "t-yiwche-test2-iothub"
+                }
+            }
+        },
+        {
+            "id": "355e2994-ff77-5452-c003-92a1ed85cdc8",
+            "folder": "Functions",
+            "name": "",
+            "dependencies": [
+                {
+                    "id": "4710f088-dc4f-6e1b-9d09-277b610c7905",
+                    "type": 1
+                }
+            ],
+            "type": "AzureFunctions"
+        }
+    ]
+}
