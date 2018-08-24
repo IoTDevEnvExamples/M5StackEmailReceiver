@@ -9,9 +9,6 @@
     "settings": {
         "IoTWorkbench.BoardId": "esp32",
         "IoTWorkbench.DevicePath": "Device",
-        "IoTWorkbench.FunctionPath": "Functions",
-        "files.associations": {
-            "system_error": "cpp"
-        }
+        "IoTWorkbench.FunctionPath": "Functions"
     }
 }
