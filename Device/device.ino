@@ -13,13 +13,13 @@
 #define TFTW2           160     // half screen width
 #define TFTH2           120     // half screen height
 // Please input the SSID and password of WiFi
-const char* ssid     = "";
-const char* password = "";
+const char* ssid     = "bbbb";
+const char* password = "chenyiwen123";
 
 /*String containing Hostname, Device Id & Device Key in the format:                         */
 /*  "HostName=<host_name>;DeviceId=<device_id>;SharedAccessKey=<device_key>"                */
 /*  "HostName=<host_name>;DeviceId=<device_id>;SharedAccessSignature=<device_sas_token>"    */
-static const char* connectionString = "";
+static const char* connectionString = "HostName=t-yiwche-test-2-iothub.azure-devices.net;DeviceId=t-yiwhce-test-2-device;SharedAccessKey=0FLOTU4rl2hfkz2F7DKAnkMNfn5coHfGRkX16jmbosc=";
 static bool hasIoTHub = false;
 static bool hasWifi = false;
 static unsigned int current_choice = 0;
@@ -41,7 +41,7 @@ void display_brief(const char * sender, const char * subject, unsigned int choic
     memcpy(send_to_display, &sender[0], strlen(sender));
     send_to_display[strlen(sender)] = '\0';
   }
-  if (strlen(subject) > 40){
+  if (strlen(subject) >= 40){
     memcpy(subject_to_display, &subject[0], 40); 
     subject_to_display[39] = '\0';
     subject_to_display[38] = '.';
@@ -51,7 +51,6 @@ void display_brief(const char * sender, const char * subject, unsigned int choic
     memcpy(subject_to_display, &subject[0], strlen(subject)); 
     subject_to_display[strlen(subject)] = '\0';
   }
-
   M5.Lcd.setTextSize(2);
   M5.Lcd.setCursor(5, TFTH * choice / 4 + 5);
   M5.Lcd.print("FROM: ");
@@ -76,7 +75,7 @@ static void MessageCallback(const char* payLoad, int size)
   const char* body = json_object_get_string(root_object, "Body");
   display_start_page();
   display_brief(from, subject, 0);
-  M5.Lcd.setCursor(5, 50);
+  M5.Lcd.setCursor(5, 65);
   M5.Lcd.setTextSize(2);
   M5.Lcd.print(body);
 }
@@ -100,7 +99,7 @@ void setup() {
   M5.Lcd.printf("\n");
   M5.Lcd.printf("WiFi connected\n");
   M5.Lcd.printf("SSID: ");
-  M5.Lcd.printf("%s\n", WiFi.SSID());
+  M5.Lcd.println(WiFi.SSID());
   M5.Lcd.printf(" > IoT Hub\n");
   if (!Esp32MQTTClient_Init((const uint8_t*)connectionString, true))
   {
